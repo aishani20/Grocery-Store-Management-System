@@ -14,7 +14,12 @@ def get_products():
     response.headers.add('Access-Control-Allow-Origin','*')
     return response
 
+##@app.route('/test',methods=['GET'])
+##def test():
+    ##return jsonify({'message':'hello world'})
+
 
 if __name__ == "__main__":
     print("starting python flask server for grocery store management system")
     app.run(port=5000)
+    
