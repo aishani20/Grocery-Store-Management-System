@@ -12,6 +12,7 @@
       name="csrf-token"
       content="kmapods5wQ5L1hn7rcR9OPst7EsN0gC7SrHh3m9K"
     />
+    <link rel="stylesheet" href="./css/manage-products.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"
@@ -85,8 +86,7 @@
                   <button
                     type="button"
                     class="btn btn-sm btn-primary pull-right"
-                    data-toggle="modal"
-                    data-target="#productModal"
+                    id="openProductModal"
                   >
                     Add New Product
                   </button>
@@ -106,12 +106,7 @@
         </div>
       </div>
 
-      <div
-        class="modal fade-scale"
-        id="productModal"
-        role="dialog"
-        data-backdrop="static"
-      >
+      <div class="modal fade-scale" id="productModal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -164,7 +159,7 @@
               <button
                 type="button"
                 class="btn btn-secondary"
-                data-dismiss="modal"
+                id="closeProductModal"
               >
                 Close
               </button>
@@ -176,9 +171,8 @@
         </div>
       </div>
     </div>
-    <script src="js/packages/jquery.min.js"></script>
+    <!-- Loading common.js because we want to use its functions globally -->
     <script src="js/custom/common.js"></script>
-    <script src="js/custom/manage-product.js"></script>
-    <script src="js/packages/bootstrap.min.js"></script>
+    <script src="js/custom/manageProducts.js"></script>
   </body>
 </html>
