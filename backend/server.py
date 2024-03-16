@@ -60,17 +60,15 @@ def delete_product():
     response = request.get_json()
     response = response.get('product_id')
     
+    if response is None:
+        return jsonify({'error': 'No product_id provided'})
+    
+    return_id = product_dao.delete_product(connection, response)
+    response = jsonify({
+        'product_id': return_id
+    })
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
-    
-    # if response is None:
-    #     return jsonify({'error': 'No product_id provided'})
-    
-    # return_id = product_dao.delete_product(connection, response)
-    # response = jsonify({
-    #     'product_id': return_id
-    # })
-    # response.headers.add('Access-Control-Allow-Origin', '*')
-    # return response
 
 @app.route('/home', methods=['GET'])
 def home():
